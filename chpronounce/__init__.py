@@ -1,0 +1,1 @@
+from .chp import ChPronounce
