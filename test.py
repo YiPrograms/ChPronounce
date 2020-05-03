@@ -5,6 +5,7 @@ print(chp.get_duyin("吃飽了沒？"))
 print(chp.get_zhuyin("吃飽了"))
 print(chp.get_pinyin("我能吃玻璃而不傷身體"))
 print(chp.get_duyin("我睡著了"))
+print(chp.get_duyin("一句話"))
 
 # Output:
 # [('chi', 'ㄔ', 1), ('bao', 'ㄅㄠ', 3), ('le', 'ㄌㄜ', 5), ('mei', 'ㄇㄟ', 2), ('？', '？', 0)]

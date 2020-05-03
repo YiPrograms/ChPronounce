@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="chpronounce",
-    version = "0.1.2",
+    version = "0.1.3",
     author="Yi Kuo",
     author_email="kuokuoyiyi@gmail.com",
     url="https://github.com/YiPrograms/chpronounce",

@@ -29,6 +29,8 @@ class ChPronounce:
                     break
             else:
                 res.append(self.dic[1][word][0][0])
+        else:
+            res.append(("", "", 0))
     
     def _break_down(self, sub, pos, res):
         if len(sub) == 0:
@@ -67,6 +69,13 @@ class ChPronounce:
                             self._append_phrase(sub, res)
                             sub = ""
                     self._break_down(sub, pos, res)
+        if any(c in sentence for c in "不一"):
+            for i in range(len(sentence)):
+                if any(sentence[i] == c for c in "不一") and i + 1 != len(sentence):
+                    if res[i+1][2] == 4:
+                        py, zy, tone = res[i]
+                        tone = 2
+                        res[i] = py, zy, tone
         return res
 
     def get_zhuyin(self, sentence):

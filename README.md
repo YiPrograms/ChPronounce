@@ -1,6 +1,6 @@
 # Ch-Pronounce
 
-A tool that uses [pkuseg](https://github.com/lancopku/pkuseg-python), a text segmentation tool,  and dictionaries to convert Chinese sentences to zhuyin (a.k.a bopomofo) or pinyin
+A tool that uses [pkuseg](https://github.com/lancopku/pkuseg-python), a text segmentation tool,  and dictionaries to convert Chinese sentences to zhuyin (a.k.a. bopomofo) or pinyin
 
 
 ## Usage
