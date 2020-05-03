@@ -20,7 +20,7 @@ class ChPronounce:
         pys, zys, tones = self.dic[len(ph)][ph]
         for i in range(len(pys)):
             res.append((pys[i], zys[i], tones[i]))
-    
+
     def _append_word(self, word, pos, res):
         if word in self.dic[1]:
             for dy, poses in self.dic[1][word]:
@@ -31,18 +31,17 @@ class ChPronounce:
                 res.append(self.dic[1][word][0][0])
         else:
             res.append(("", "", 0))
-    
+
     def _break_down(self, sub, pos, res):
         if len(sub) == 0:
             return
         for c in sub:
             self._append_word(c, pos, res)
 
-
     def get_duyin(self, sentence):
         for i in range(len(sentence)):
             if sentence[i] in self.t2s:
-                sentence = sentence[:i] + self.t2s[sentence[i]] + sentence[i+1:]
+                sentence = sentence[:i] + self.t2s[sentence[i]] + sentence[i + 1:]
 
         sen = self.seg.cut(sentence)
         if self.print_seg:
@@ -72,7 +71,7 @@ class ChPronounce:
         if any(c in sentence for c in "不一"):
             for i in range(len(sentence)):
                 if any(sentence[i] == c for c in "不一") and i + 1 != len(sentence):
-                    if res[i+1][2] == 4:
+                    if res[i + 1][2] == 4:
                         py, zy, tone = res[i]
                         tone = 2
                         res[i] = py, zy, tone
@@ -97,11 +96,10 @@ class ChPronounce:
         print("To save, use save()")
 
         dic = self.dic
+
         def save():
             with open(os.path.join(os.path.dirname(__file__), "xdic.pkl"), "wb") as f:
                 pickle.dump(dic, f, pickle.HIGHEST_PROTOCOL)
 
         import code
         code.interact(local=locals())
-
-
